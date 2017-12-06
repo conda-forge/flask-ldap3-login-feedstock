@@ -1,7 +1,7 @@
 {% set name = "flask-ldap3-login" %}
-{% set version = "0.9.9" %}
+{% set version = "0.9.13" %}
 {% set hashtype = "sha256" %}
-{% set hash = "d8b149ed748037de9c597e6479fcb71b96fe45e9d136cfd0a070a1fd3f5173fa" %}
+{% set hash = "5bc52b3cd3e55411ea9ee51b754b790bb09dd6f1c36f30adf44fbd2474632e8e" %}
 
 package:
   name: {{ name }}
@@ -24,7 +24,8 @@ requirements:
     - python
     - enum34  # [py2k]
     - flask
-    - ldap3
+    - flask-wtf
+    - ldap3 >=2.0.7
     - wtforms
 
 test:
