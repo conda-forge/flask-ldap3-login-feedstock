@@ -1,7 +1,7 @@
 {% set name = "flask-ldap3-login" %}
-{% set version = "0.9.13" %}
+{% set version = "0.9.14" %}
 {% set hashtype = "sha256" %}
-{% set hash = "5bc52b3cd3e55411ea9ee51b754b790bb09dd6f1c36f30adf44fbd2474632e8e" %}
+{% set hash = "e11fb6752d3bbe418ec460c012335aef39e2c6645500171cc5507d2fb28df0d6" %}
 
 package:
   name: {{ name }}
