@@ -1,36 +1,37 @@
 {% set name = "flask-ldap3-login" %}
-{% set version = "0.9.16" %}
-{% set hashtype = "sha256" %}
-{% set hash = "2ab330d1702fb03cde432ad0c077ae154e595113b5e7e42866c57482da1ef788" %}
+{% set version = "0.9.17" %}
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hashtype }}: {{ hash }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flask-ldap3-login-{{ version }}.tar.gz
+  sha256: 3b98eff48f94cf8bcf91c1790eb3a59e03df6c56d5e1bd8fe8919193d120fb5a
 
 build:
-  number: 1002
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
-  build:
-    - python
-    - setuptools
+  host:
+    - pip
+    - python >=3.6
   run:
-    - python
-    - enum34  # [py2k]
     - flask
     - flask-wtf
     - ldap3 >=2.0.7
-    - wtforms
+    - python >=3.6
+    - wtforms >=1.0.2
 
 test:
   imports:
-    - {{ name.replace('-', '_') }}
+    - flask_ldap3_login
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/nickw444/flask-ldap3-login
