@@ -1,5 +1,5 @@
 {% set name = "flask-ldap3-login" %}
-{% set version = "0.9.17" %}
+{% set version = "0.9.18" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flask-ldap3-login-{{ version }}.tar.gz
-  sha256: 3b98eff48f94cf8bcf91c1790eb3a59e03df6c56d5e1bd8fe8919193d120fb5a
+  sha256: b705ead317f814150233a866e6e946d65bb503958306cc4964325a3aafbfb041
 
 build:
   noarch: python
